@@ -121,6 +121,104 @@ const modPrompts = {
     // Write your annotation here as a comment
   }
 };
+// DATASET: cakes from ./datasets/cakes
+const cakePrompts = {
+  stockPerCake() {
+    // Return an array of objects that include just the flavor of the cake and how
+    // much of that cake is in stock e.g.
+    // [ 
+    //    { flavor: 'dark chocolate', inStock: 15 },
+    //    { flavor: 'yellow', inStock: 14 },
+    //    ..etc
+    // ]
+
+
+
+    const result = 'something';
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  },
+
+  onlyInStock() {
+    // Return an array of only the cakes that are in stock
+    // e.g.
+    // [
+    //   {
+    //   cakeFlavor: 'dark chocolate',
+    //   filling: null,
+    //   frosting: 'dark chocolate ganache',
+    //   toppings: ['dutch process cocoa', 'toasted sugar', 'smoked sea salt'],
+    //   inStock: 15
+    // },
+    // {
+    //   cakeFlavor: 'yellow',
+    //   filling: 'citrus glaze',
+    //   frosting: 'chantilly cream',
+    //   toppings: ['berries', 'edible flowers'],
+    //   inStock: 14
+    // },
+    // ..etc
+    // ]
+
+
+
+    const result = 
+    'something';
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  },
+  
+  totalInventory() {
+    // Return the total amount of cakes in stock e.g.
+    // 59
+
+    const result = 
+    'something';
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  },
+
+  allToppings() {
+    // Return an array of all unique toppings (no duplicates) needed to bake
+    // every cake in the dataset e.g.
+    // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
+
+    
+    
+    const result = 'something';
+
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  },
+
+  groceryList() {
+    // I need to make a grocery list. Please give me an object where the keys are
+    // each topping, and the values are the amount of that topping I need to buy e.g.
+    // { 
+    //    'dutch process cocoa': 1,
+    //    'toasted sugar': 3,
+    //    'smoked sea salt': 3,
+    //    'berries': 2, 
+    //    ...etc
+    // }
+
+    const result = 
+    'something';
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  }
+};
+
 
 
 
