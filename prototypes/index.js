@@ -202,7 +202,15 @@ const cakePrompts = {
 
     
     
-    const result = 'something';
+    const result = 
+      cakes.reduce((acc, cake) => {
+        cake.toppings.forEach(topping => {
+          if(!acc.includes(topping)) {
+            acc.push(topping)
+          }
+        })
+        return acc;
+      }, []);
 
     return result;
 
