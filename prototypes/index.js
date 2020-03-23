@@ -230,7 +230,19 @@ const cakePrompts = {
     // }
 
     const result = 
-    'something';
+    cakes.reduce((object, cake) => {
+      let toppingKey;
+      let number = cake.toppings.reduce((acc, topping) => {
+        if(topping) {
+          toppingKey = topping;
+          acc ++;
+        }
+
+        return acc
+      }, 0)
+      object[toppingKey] = number;
+      return object
+    }, {});
     return result;
 
     // Annotation:
