@@ -64,6 +64,70 @@ const kittyPrompts = {
   }
 };
 
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+
+
+
+
+
+
+// DATASET: clubs from ./datasets/clubs
+const clubPrompts = {
+  membersBelongingToClubs() {
+    // Create an object whose keys are the names of people, and whose values are
+    // arrays that include the names of the clubs that person is a part of. e.g. 
+    // {
+    //   Louisa: ['Drama', 'Art'],
+    //   Pam: ['Drama', 'Art', 'Chess'],
+    //   ...etc
+    // }
+    const clubMembers = clubs.reduce((acc, currVal) => {
+
+
+      // return {[instructor]: [clubs]}
+    }, {})
+    const result = clubMembers;
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  }
+};
+
+// DATASET: mods from ./datasets/mods
+const modPrompts = {
+  studentsPerMod() {
+    // Return an array of objects where the keys are mod (the number of the module)
+    // and studentsPerInstructor (how many students per instructor there are for that mod) e.g.
+    // [
+    //   { mod: 1, studentsPerInstructor: 9 },
+    //   { mod: 2, studentsPerInstructor: 11 },
+    //   { mod: 3, studentsPerInstructor: 10 },
+    //   { mod: 4, studentsPerInstructor: 8 }
+    // ]
+
+
+    return mods.map(mod => {
+      return { mod: mod.mod, studentsPerInstructor: mod.students / mod.instructors}
+    })
+    // const result = 'REPLACE WITH YOUR RESULT HERE';
+    // return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  }
+};
+
+
+
+
+
 module.exports = {
-  kittyPrompts
+  kittyPrompts,
+  clubPrompts,
+  modPrompts
 }
