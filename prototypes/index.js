@@ -185,7 +185,10 @@ const cakePrompts = {
     // 59
 
     const result = 
-    'something';
+    cakes.reduce((acc, cake) => {
+      acc += cake.inStock
+      return acc
+    }, 0);
     return result;
 
     // Annotation:
