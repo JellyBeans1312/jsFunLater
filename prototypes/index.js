@@ -124,10 +124,140 @@ const modPrompts = {
 
 
 
+// DATASET: cakes from ./datasets/cakes
+const cakePrompts = {
+  stockPerCake() {
+    // Return an array of objects that include just the flavor of the cake and how
+    // much of that cake is in stock e.g.
+    // [ 
+    //    { flavor: 'dark chocolate', inStock: 15 },
+    //    { flavor: 'yellow', inStock: 14 },
+    //    ..etc
+    // ]
+
+
+
+    const result = 
+    cakes.map(cake => {
+      return {flavor: cake.cakeFlavor, inStock: cake.inStock}
+    });
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  },
+
+  onlyInStock() {
+    // Return an array of only the cakes that are in stock
+    // e.g.
+    // [
+    //   {
+    //   cakeFlavor: 'dark chocolate',
+    //   filling: null,
+    //   frosting: 'dark chocolate ganache',
+    //   toppings: ['dutch process cocoa', 'toasted sugar', 'smoked sea salt'],
+    //   inStock: 15
+    // },
+    // {
+    //   cakeFlavor: 'yellow',
+    //   filling: 'citrus glaze',
+    //   frosting: 'chantilly cream',
+    //   toppings: ['berries', 'edible flowers'],
+    //   inStock: 14
+    // },
+    // ..etc
+    // ]
+
+
+
+    const result = 
+    cakes.filter(cake => {
+      return cake.inStock
+    });
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  },
+  
+  totalInventory() {
+    // Return the total amount of cakes in stock e.g.
+    // 59
+
+    const result = 
+    cakes.reduce((acc, cake) => {
+      acc += cake.inStock
+      return acc
+    }, 0);
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  },
+
+  allToppings() {
+    // Return an array of all unique toppings (no duplicates) needed to bake
+    // every cake in the dataset e.g.
+    // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
+
+    
+    
+    const result = 
+      cakes.reduce((acc, cake) => {
+        cake.toppings.forEach(topping => {
+          if(!acc.includes(topping)) {
+            acc.push(topping)
+          }
+        })
+        return acc;
+      }, []);
+
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  },
+
+  groceryList() {
+    // I need to make a grocery list. Please give me an object where the keys are
+    // each topping, and the values are the amount of that topping I need to buy e.g.
+    // { 
+    //    'dutch process cocoa': 1,
+    //    'toasted sugar': 3,
+    //    'smoked sea salt': 3,
+    //    'berries': 2, 
+    //    ...etc
+    // }
+
+    const result = 
+    cakes.reduce((object, cake) => {
+      let toppingKey;
+      let number = cake.toppings.reduce((acc, topping) => {
+        if(topping) {
+          toppingKey = topping;
+          acc ++;
+        }
+
+        return acc
+      }, 0)
+      object[toppingKey] = number;
+      return object
+    }, {});
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  }
+};
+
+
+
+
 
 
 module.exports = {
   kittyPrompts,
   clubPrompts,
-  modPrompts
+  modPrompts,
+  cakePrompts
 }
