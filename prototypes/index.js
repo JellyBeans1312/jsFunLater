@@ -121,6 +121,9 @@ const modPrompts = {
     // Write your annotation here as a comment
   }
 };
+
+
+
 // DATASET: cakes from ./datasets/cakes
 const cakePrompts = {
   stockPerCake() {
@@ -134,7 +137,10 @@ const cakePrompts = {
 
 
 
-    const result = 'something';
+    const result = 
+    cakes.map(cake => {
+      return {flavor: cake.cakeFlavor, inStock: cake.inStock}
+    });
     return result;
 
     // Annotation:
@@ -227,5 +233,6 @@ const cakePrompts = {
 module.exports = {
   kittyPrompts,
   clubPrompts,
-  modPrompts
+  modPrompts,
+  cakePrompts
 }
