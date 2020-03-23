@@ -171,7 +171,9 @@ const cakePrompts = {
 
 
     const result = 
-    'something';
+    cakes.filter(cake => {
+      return cake.inStock
+    });
     return result;
 
     // Annotation:
